@@ -1,0 +1,27 @@
+<div *ngIf="customer">
+  <table>
+  	<tr>
+  		<td colspan="3">
+  			<div class="name"> {{customer.name.first}} {{customer.name.last}}</div>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td class="details-td" *ngIf="!isEditable">
+  			<div><div class="label">Birthday :</div><div class="phone">{{customer.birthday}}</div></div>
+  			<div><div class="label">Gender :</div><div class="mobile">{{customer.gender === 'm' ? 'Male' : 'Female'}}</div></div>
+  			<div><div class="label">Last Contact :</div> <div class="email">{{customer.lastContact}}</div></div>
+        <div><div class="label">Customer Life Time Value :</div>  <div class="email">{{customer.customerLifetimeValue}}</div></div>
+  		</td>
+      <td class="details-td" *ngIf="isEditable">
+  			<div><div class="label">Birthday :</div><div class="phone"><input [(ngModel)]="customer.birthday" placeholder="birthday"/></div></div>
+  			<div><div class="label">Gender :</div><div class="mobile"><input [(ngModel)]="customer.gender" placeholder="gender" max-length="1"/></div></div>
+  			<div><div class="label">Last Contact :</div> <div class="email"><input type="datetime-local"  [ngModel]="customer.lastContact | date:'yyyy-MM-ddTHH:mm'" (ngModelChange)="customer.lastContact = $event" placeholder="last contact"/></div></div>
+        <div><div class="label">Customer Life Time Value :</div>  <div class="email"><input [(ngModel)]="customer.customerLifetimeValue" placeholder="customer Lifetime Value"/></div></div>
+  		</td>
+  	</tr>
+      <button (click)="goBack()">Go Back</button>
+      <button *ngIf="!isEditable" (click)="isEditable = !isEditable">Edit</button>
+      <button *ngIf="isEditable" (click)="save();">Save</button>
+  </table>
+
+</div>

@@ -1,0 +1,110 @@
+/* ProfileComponent's private CSS styles */
+label {
+  display: inline-block;
+  width: 3em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+button {
+
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 25%;
+  margin: 20px 50px;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+
+table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+  border: 5px solid grey;
+	transform: translateX(-50%) translateY(-50%);
+	background: #fff;
+	padding: 20px;
+}
+
+.name {
+	font-size: 30px;
+	border-bottom: 2px solid #888;
+	margin-bottom: 20px;
+}
+.name:first-letter {
+	font-size: 300%;
+}
+
+.label {
+	width: 70px;
+	font-weight: bold;
+}
+
+.label, .phone, .mobile, .email {
+	display: inline-block;
+}
+.phone, .mobile, .email {
+	float: right;
+}
+.details-td {
+	border-right: 1px solid #eee;
+	white-space: nowrap;
+
+	padding: 20px;
+	padding-right: 30px;
+}
+.details-td > div {
+      margin: 25px auto;
+}
+.description-td {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: justify;
+	margin-top: 15px;
+}
+	.description {
+		outline: 0px solid transparent;
+		border: 0px solid transparent;
+	}
+	.edit {
+		position: absolute;
+		top: 0px;
+		right: 0;
+
+		width: 13px;
+		height: 13px;
+
+		cursor: pointer;
+	}
+	.update {
+		display: none;
+		position: absolute;
+		right: 20px;
+		bottom: 0;
+		background: #c2e59c;
+		border: 0;
+		padding: 5px;
+		width: 80px;
+		color: #333;
+		outline: 0px solid transparent;
+		border: 0px solid transparent;
+	}
