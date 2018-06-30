@@ -94,7 +94,6 @@ app.post('/listCustomers/add', function(req, res) {
 
 app.post('/listCustomers/delete/:id', function(req, res) {
   // First read existing users.
-  console.log("delete Users");
   let id = req.params.id;
   if(id ) {
     readFromJSON.then(function(data) {
@@ -178,5 +177,5 @@ const server = app.listen(7007, function() {
   let host = server.address().address,
     port = server.address().port
 
-  console.log("Example app listening at", host, port)
+  console.log("WebTrekk App Server listening at", host, port)
 })
