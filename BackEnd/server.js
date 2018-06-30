@@ -1,7 +1,7 @@
 const express = require('express');
 var app = express();
 var fs = require("fs");
-var directory = './jsonData/customers.json';
+var directory = './jsonData/customers.json';   //JSON file to be used
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({

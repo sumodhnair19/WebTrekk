@@ -27,21 +27,25 @@ export class OverviewComponent implements OnInit {
   add(e, form: NgForm) {
     e.preventDefault();
     if (!form.value) { return; }
-    this.customer = {
-      "customerID": ++this.customers.length,
-      "name": {
-          "first": form.value.first,
-          "last": form.value.last
-      },
-      "birthday": form.value.birthday,
-      "gender": form.value.gender,
-      "lastContact": form.value.lastContact,
-      "customerLifetimeValue": form.value.customerLifetimeValue
+    if(form.value  &&  form.value.first && form.value.last) {
+      this.customer = {
+        "customerID": ++this.customers.length,
+        "name": {
+            "first": form.value.first,
+            "last": form.value.last
+        },
+        "birthday": form.value.birthday,
+        "gender": form.value.gender,
+        "lastContact": form.value.lastContact,
+        "customerLifetimeValue": form.value.customerLifetimeValue
+      }
+      this.customerService.addCustomer( this.customer )
+        .subscribe(()=>{
+            location.reload();
+        });
+    } else {
+      alert("please enter required fields");
     }
-    this.customerService.addCustomer( this.customer )
-      .subscribe(()=>{
-          location.reload();
-      });
   }
 
   deleteCustomer(customer: Customer, index) {
